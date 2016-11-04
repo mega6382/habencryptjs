@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<script src="habEncrypt.js" type="text/javascript"></script>
+		<script type="text/javascript">			
+			var has = new habEncrypt();
+		</script>
+	</head>
+	<body>
+	<div id="example"></div>
+	<script type="text/javascript">
+		var exmpl = document.getElementById('example');
+		var string = 'Lorem Ipsum doller Sit';
+		var key = "123456789";
+		var enc = has.enc(string, key);
+		var dec = has.dec(enc, key);
+
+		exmpl.innerHTML += "Integer only Key. encrypted Value: " + enc + ". Original and decrypted Value: "+ dec + "</br>";
+
+		key = "abc123def456";
+		enc = has.enc(string, key);
+		dec = has.dec(enc, key);
+
+		exmpl.innerHTML += "String Key. encrypted Value: " + enc + ". Original and decrypted Value: " + dec + "</br>";
+
+		key = "123456789";
+		enc = has.b64enc(string, key);
+		dec = has.b64dec(enc, key);
+
+		exmpl.innerHTML += "Integer only Key(Base64 Version). encrypted Value: " + enc + ". Original and decrypted Value: " + dec + "</br>";
+
+		key = "abc123def456";
+		enc = has.b64enc(string, key);
+		dec = has.b64dec(enc, key);
+
+		exmpl.innerHTML += "String Key(Base64 Version). encrypted Value: " + enc +  ". Original and decrypted Value: " + dec;
+	</script>
+	</body>
+</html>
+<?php 
+
