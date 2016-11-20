@@ -10,6 +10,7 @@ var habEncrypt = function()
      */
     this.enc = function(string, key) {
         var enc = "";
+	var string = string.toString();
         var count = string.length;
         var keyCount = key.length;
 		var j = 0;
@@ -34,6 +35,7 @@ var habEncrypt = function()
      */
     this.dec = function(string, key) {
         var dec = "";
+	var string = string.toString();
         var count = string.length;
         var keyCount = key.length;
 		var j = 0;
